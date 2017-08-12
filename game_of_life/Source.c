@@ -151,19 +151,20 @@ void game(int table[][TABLE_COL])
 	{
 
 		/*Check if a key was pressed.*/
-			if (kbhit()) {
-				c = getch();
-				if (c == 'f' || c == 'F')
-				{
-					if (game_speed >= 100)
-						game_speed -= 100;
-				}
-				else if (c == 's' || c == 'S')
-				{
-					game_speed +=100;
-				}						
-			}		
-
+		if (kbhit()) 
+		{
+			c = getch();
+			if (c == 'f' || c == 'F')
+			{
+				if (game_speed >= 100)
+					game_speed -= 100;
+			}
+			else if (c == 's' || c == 'S')
+			{
+				game_speed +=100;
+			}						
+		}
+		
 		system("CLS");
 		print_board(table);
 		Sleep(game_speed);
@@ -182,7 +183,6 @@ void game(int table[][TABLE_COL])
 				}
 			}
 		}
-
 	}
 }
 
